@@ -1,0 +1,14 @@
+.netrwhist
+zsh/zsh_history
+zsh/.zsh_history
+zsh/.zcompdump
+zsh/.zcompcache
+zsh/.zsh_sessions
+plug.vim
+vim/plugged/*
+local/*
+vim/tmp/*
+!*.md
+viminfo
+configstore/update-notifier-npm.json
+configstore/*

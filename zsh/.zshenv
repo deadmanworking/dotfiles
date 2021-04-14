@@ -1,0 +1,1 @@
+export EVE_SETTINGS_LOCATION=/Users/nickhamm/Library/Application Support/EVE Online/p_drive/Local Settings/Application Data/CCP/EVE/SharedCache/wineenv/drive_c/users/nickhamm/Local Settings/Application Data/CCP/EVE/c_tq_tranquility/settings_Default
