@@ -1,0 +1,22 @@
+[user]
+	name = Nick Hamm
+	email = nick.hamm@mac.com
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+        keepBackup = false
+[alias]
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
+	ignored = !git ls-files -v | grep "^S"
+[core]
+	; excludesfile = /Users/nhamm/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[color]
+	ui = auto
+[rebase]
+	autosquash = true
