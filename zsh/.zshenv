@@ -7,9 +7,14 @@ export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local"
 
+## Zinit
+typeset -A ZINIT
+ZINIT_HOME=$XDG_CACHE_HOME/zsh/zsinit
+ZINIT[HOME_DIR]=$ZINIT_HOME
+
 ## Vim 
-# export VIMDIRPATH="$XDG_CONFIG_HOME/vim"
-# export VIMINIT='let $MYVIMRC="$VIMDIRPATH/vimrc" | source $MYVIMRC'
+export VIMDIRPATH="$XDG_CONFIG_HOME/vim"
+export VIMINIT='let $MYVIMRC="$VIMDIRPATH/vimrc" | source $MYVIMRC'
 
 # ASDF
 export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/.asdfrc"
@@ -18,3 +23,7 @@ export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/.asdfrc"
 
 # add custom functions location to front of fpath
 fpath=( $ZDOTDIR/zfunc "${fpath[@]}" )
+
+
+## Misc
+export TRANSMISSION_HOME="$XDG_CONFIG_HOME/transmission"
