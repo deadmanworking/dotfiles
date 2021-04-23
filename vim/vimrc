@@ -26,11 +26,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{
 """ Ensure vim files are in XDG_CONFIG_HOME folder
+"
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-set directory=$XDG_CONFIG_HOME/vim/tmp//
-set backupdir=$XDG_CONFIG_HOME/vim/tmp//
-set undodir=$XDG_CONFIG_HOME/vim/tmp//
-set viminfo+=n$XDG_CONFIG_HOME/vim/tmp/viminfo
+call setup#CreateTempFolder()
+set directory=$XDG_CACHE_HOME/vim/tmp/
+set backupdir=$XDG_CACHE_HOME/vim/tmp/
+set undodir=$XDG_CACHE_HOME/vim/tmp/
+set viminfo+=n$XDG_CACHE_HOME/vim/tmp/viminfo
 """
 set nocompatible                " Sets compatibility to Vim only; useful for -u flag
 set encoding=utf-8              " Use UTF-8

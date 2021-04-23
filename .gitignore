@@ -1,14 +1,20 @@
 .netrwhist
+
+# General
+!*.md
+configstore/update-notifier-npm.json
+configstore/*
+local/*
+
+# Zsh
 zsh/zsh_history
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/.zcompcache
 zsh/.zsh_sessions
+
+# Vim
 plug.vim
 vim/plugged/*
-local/*
 vim/tmp/*
-!*.md
 viminfo
-configstore/update-notifier-npm.json
-configstore/*
