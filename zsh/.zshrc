@@ -1,7 +1,8 @@
 
-setopt autocd
 typeset -U path
-
+setopt autocd
+# Enable vi mode
+bindkey -v
 
 # case insensitive path-completion 
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
@@ -21,7 +22,8 @@ zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./stars
 zinit light starship/starship
 
 ## Install Tmux
-zinit ice as"program" atclone"sh autogen.sh; ./configure --prefix=$/ZPXF; make install" pick"$ZPFX/bin/tmux"
+# zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPXF; make && make install" pick"$ZPFX/bin/tmux"
+zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
 zinit load tmux/tmux
 
 ## Install Vim
@@ -29,3 +31,7 @@ zinit ice as"program" atclone"rm -f src/auto/config.cache; \
     ./configure  --with-features=huge --enable-rubyinterp=yes --enable-python3interp=yes --enable-luainterp=yes --enable-cscope --enable-perlinterp=yes --enable-gettext --prefix=$ZPFX" atpull"%atclone" \
     make"all install" pick"$ZPFX/bin/vim"
 zinit load vim/vim
+
+## Load OMZ Plugins
+# vi mode
+# zinit snippet OMZP::vi-mode
