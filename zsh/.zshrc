@@ -32,6 +32,3 @@ zinit ice as"program" atclone"rm -f src/auto/config.cache; \
     make"all install" pick"$ZPFX/bin/vim"
 zinit load vim/vim
 
-## Load OMZ Plugins
-# vi mode
-# zinit snippet OMZP::vi-mode
