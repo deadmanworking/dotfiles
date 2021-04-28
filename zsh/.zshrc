@@ -2,20 +2,30 @@
 setopt autocd
 typeset -U path
 
+
+# case insensitive path-completion 
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
+# partial completion suggestions
+zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
+
+## Zinit Instll & Source
 autoload -Uz installZinit
 installZinit
-
 source "$ZINIT_HOME/bin/zinit.zsh"
+autoload -Uz compinit && compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+## Install starship as prompt
+zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
+zinit light starship/starship
 
-### End of Zinit's installer chunk
-zinit light denysdovhan/spaceship-prompt
+## Install Tmux
+zinit ice as"program" atclone"sh autogen.sh; ./configure --prefix=$/ZPXF; make install" pick"$ZPFX/bin/tmux"
+zinit load tmux/tmux
+
+## Install Vim
+zinit ice as"program" atclone"rm -f src/auto/config.cache; \
+    ./configure  --with-features=huge --enable-rubyinterp=yes --enable-python3interp=yes --enable-luainterp=yes --enable-cscope --enable-perlinterp=yes --enable-gettext --prefix=$ZPFX" atpull"%atclone" \
+    make"all install" pick"$ZPFX/bin/vim"
+zinit load vim/vim
