@@ -10,19 +10,15 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
 
 ## Zinit Instll & Source
-autoload -Uz installZinit
+autoload -Uz installZinit asdfSetup
 installZinit
 source "$ZINIT_HOME/bin/zinit.zsh"
-autoload -Uz compinit && compinit
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
 
 ## Install starship as prompt
 zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
 zinit light starship/starship
 
 ## Install Tmux
-# zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPXF; make && make install" pick"$ZPFX/bin/tmux"
 zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
 zinit load tmux/tmux
 
@@ -32,3 +28,23 @@ zinit ice as"program" atclone"rm -f src/auto/config.cache; \
     make"all install" pick"$ZPFX/bin/vim"
 zinit load vim/vim
 
+## Install Direnv
+zinit from"gh-r" as"program" mv"direnv* -> direnv" \
+        atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+            pick"$ZPFX/bin/direnv" src="zhook.zsh" for \
+                    direnv/direnv
+## Install asdf
+zinit id-as'asdf' \
+    atinit'export ASDF_DATA_DIR="$XDG_DATA_HOME/.asdf";' \
+    src"asdf.sh" \
+    atload"asdfSetup" \
+    for @asdf-vm/asdf
+
+autoload -Uz compinit
+compinit
+zinit cdreplay -q
+
+        
+# zinit wait"1" lucid from"gh-r" as"null" for \
+#      sbin"**/fd"        @sharkdp/fd \
+#      sbin"exa* -> exa"  ogham/exa
