@@ -212,6 +212,10 @@ let g:limelight_eop = '\ze\n^\s'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""     File Specific Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Skeletons (Credit: https://levelup.gitconnected.com/reducing-boilerplate-with-vim-templates-83831f8ced12)
+"" Python3
+" main.py
+autocmd BufNewFile main.py 0r ~/.config/vim/skeletons/main.py
 ""{{{
 "" Python
 " autocmd BufRead,BufNewFile *.py
@@ -223,5 +227,6 @@ let g:limelight_eop = '\ze\n^\s'
 "" C
 " autocmd BufRead, BufNewFile *.c
 "         \ source $VIMDIRPATH.'configurations/c/conf.vim'"}}}
+
 
 " vim:fdm=marker
