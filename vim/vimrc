@@ -216,6 +216,9 @@ let g:limelight_eop = '\ze\n^\s'
 "" Python3
 " main.py
 autocmd BufNewFile main.py 0r ~/.config/vim/skeletons/main.py
+
+"" Shell
+autocmd BufNewFile *sh 0r ~/.config/vim/skeletons/shell-script.sh
 ""{{{
 "" Python
 " autocmd BufRead,BufNewFile *.py

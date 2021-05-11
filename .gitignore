@@ -5,6 +5,7 @@
 configstore/update-notifier-npm.json
 configstore/*
 local/*
+*.backup
 
 # Zsh
 zsh/zsh_history
@@ -21,3 +22,4 @@ viminfo
 
 # Other
 gh/
+gcloud/
