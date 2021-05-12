@@ -12,7 +12,7 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suff
 ## Zinit Instll & Source
 autoload -Uz installZinit asdfSetup
 installZinit
-source "$ZINIT_HOME/bin/zinit.zsh"
+source "$XDG_DATA_HOME/zinit/bin/zinit.zsh"
 
 ## Install starship as prompt
 zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
@@ -39,10 +39,19 @@ zinit id-as'asdf' \
     src"asdf.sh" \
     atload"asdfSetup" \
     for @asdf-vm/asdf
+zinit cdclear
+
+# Install Poetry
+# zinit ice as"program" atclone"python install-poetry.py" pick"/Users/nickhamm/.local/bin/poetry" nocompletions
+zinit ice as"program" atclone"python install-poetry.py; $XDG_DATA_HOME/bin/poetry completions zsh > $ZINIT[COMPLETIONS_DIR]/_poetry" atpull"%atclone" pick"$XDG_DATA_HOME/bin/poetry" nocompletions
+
+
+# zinit cdclear 
+zinit load python-poetry/poetry
 
 autoload -Uz compinit
 compinit
-zinit cdreplay -q
+zinit cdreplay
 
         
 # zinit wait"1" lucid from"gh-r" as"null" for \
