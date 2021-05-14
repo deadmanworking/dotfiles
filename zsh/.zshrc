@@ -18,6 +18,9 @@ source "$XDG_DATA_HOME/zinit/bin/zinit.zsh"
 zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
 zinit light starship/starship
 
+## Install spaceship as prompt
+# zinit light denysdovhan/spaceship-prompt
+
 ## Install Tmux
 zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
 zinit load tmux/tmux
@@ -45,6 +48,8 @@ zinit cdclear
 # zinit ice as"program" atclone"python install-poetry.py" pick"/Users/nickhamm/.local/bin/poetry" nocompletions
 zinit ice as"program" atclone"python install-poetry.py; $XDG_DATA_HOME/bin/poetry completions zsh > $ZINIT[COMPLETIONS_DIR]/_poetry" atpull"%atclone" pick"$XDG_DATA_HOME/bin/poetry" nocompletions
 
+## Install Google Cloud SDK
+# zinit snippet
 
 # zinit cdclear 
 zinit load python-poetry/poetry
@@ -53,7 +58,8 @@ autoload -Uz compinit
 compinit
 zinit cdreplay
 
-        
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"        
 # zinit wait"1" lucid from"gh-r" as"null" for \
 #      sbin"**/fd"        @sharkdp/fd \
 #      sbin"exa* -> exa"  ogham/exa
