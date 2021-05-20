@@ -4,7 +4,6 @@
 <h2 align="center"> I could be working...but my environment needs me... </h2>
 
   <p align="center">
-     <img alt="Nikola's terminal in the wild" src="https://raw.githubusercontent.com/nikolalsvk/dotfiles/master/dotfiles-in-the-wild.png" />
        </p>
 
          <p align="center">
