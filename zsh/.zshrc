@@ -50,7 +50,9 @@ zinit cdclear
 
 # Install Poetry
 # zinit ice as"program" atclone"python install-poetry.py" pick"/Users/nickhamm/.local/bin/poetry" nocompletions
-zinit ice as"program" atclone"python install-poetry.py; $XDG_DATA_HOME/bin/poetry completions zsh > $ZINIT[COMPLETIONS_DIR]/_poetry" atpull"%atclone" pick"$XDG_DATA_HOME/bin/poetry" nocompletions
+zinit ice as"program" \
+    atclone"python install-poetry.py; $XDG_DATA_HOME/bin/poetry completions zsh > $ZINIT[COMPLETIONS_DIR]/_poetry" \
+    atpull"%atclone" pick"$XDG_DATA_HOME/bin/poetry" nocompletions
 zinit load python-poetry/poetry
 
 ## Install Anaconda/Miniconda
@@ -60,17 +62,15 @@ CONDA_DIR=$XDG_DATA_HOME/conda
 # anaconda -- needs tweaked
 # zinit as"command" id-as"anaconda" dl"https://repo.anaconda.com/archive/$CURRENT_CONDA" sbin"$CONDA_DIR/bin/conda" atclone'rm -rf $CONDA_DIR; sh $CURRENT_CONDA -b -p $CONDA_DIR' atpull"%atclone" for zdharma/null
 # miniconda
-# zinit as"command" id-as"miniconda" dl"https://repo.anaconda.com/miniconda/$CURRENT_MINICONDA" sbin"$CONDA_DIR/bin/conda" atclone"rm -rf $CONDA_DIR; sh $CURRENT_MINICONDA -b -p $CONDA_DIR" for zdharma/null
 #
 zinit as"command" id-as"miniconda"  \
     dl"https://repo.anaconda.com/miniconda/$CURRENT_MINICONDA" \
     sbin"$CONDA_DIR/bin/conda" \
     atclone"rm -rf $CONDA_DIR; sh $CURRENT_MINICONDA -b -p $CONDA_DIR" \
-    atpull"%atclone" \
+    atpull"%atclone" nocompletions \
 for zdharma/null
 
-
-
+zinit load esc/conda-zsh-completion
 ## Install Google Cloud SDK
 # zinit snippet
 
