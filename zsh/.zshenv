@@ -38,5 +38,5 @@ if [ -f '/Users/nic khamm/.local/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 if [ -f '/Users/nickhamm/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nickhamm/.local/google-cloud-sdk/completion.zsh.inc'; fi
 
 ## TimeWarrior & TaskWarrior
-export TIMEWARRIORDB="$XDG_DAT_HOME/.timewarrior"
-
+export TIMEWARRIORDB="$XDG_DATA_HOME/.timewarrior"
+export TASKRC="$XDG_CONFIG_HOME/.taskrc"

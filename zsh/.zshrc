@@ -19,11 +19,11 @@ zinit light zinit-zsh/z-a-bin-gem-node
 
 
 ## Install starship as prompt
-zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
-zinit light starship/starship
+# zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
+# zinit light starship/starship
 
 ## Install spaceship as prompt
-# zinit light denysdovhan/spaceship-prompt
+zinit light denysdovhan/spaceship-prompt
 
 ## Install Tmux
 zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
