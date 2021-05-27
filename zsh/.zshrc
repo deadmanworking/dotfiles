@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 typeset -U path
 setopt autocd
@@ -23,8 +30,11 @@ zinit light zinit-zsh/z-a-bin-gem-node
 # zinit light starship/starship
 
 ## Install spaceship as prompt
-zinit light denysdovhan/spaceship-prompt
+# zinit light denysdovhan/spaceship-prompt
 
+## Install Powerline10k as prompt
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 ## Install Tmux
 zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
 zinit load tmux/tmux
@@ -84,3 +94,6 @@ zinit cdreplay
 # zinit wait"1" lucid from"gh-r" as"null" for \
 #      sbin"**/fd"        @sharkdp/fd \
 #      sbin"exa* -> exa"  ogham/exa
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
