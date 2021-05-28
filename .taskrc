@@ -25,7 +25,7 @@ data.location=/Users/nickhamm/.local/.task
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/dark-yellow-green.theme
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/dark-gray-256.theme
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/dark-gray-blue-256.theme
-#include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/solarized-dark-256.theme
+include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/solarized-dark-256.theme
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/solarized-light-256.theme
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/no-color.theme
 
