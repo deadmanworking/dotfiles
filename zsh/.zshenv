@@ -40,3 +40,4 @@ if [ -f '/Users/nickhamm/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '
 ## TimeWarrior & TaskWarrior
 export TIMEWARRIORDB="$XDG_DATA_HOME/.timewarrior"
 export TASKRC="$XDG_CONFIG_HOME/.taskrc"
+export TASKDATA="$XDG_DATA_HOME/.task"
