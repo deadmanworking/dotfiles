@@ -56,7 +56,7 @@ zinit id-as'asdf' \
     src"asdf.sh" \
     atload"asdfSetup" \
     for @asdf-vm/asdf
-zinit cdclear
+zinit cdclear -q
 
 # Install Poetry
 # zinit ice as"program" atclone"python install-poetry.py" pick"/Users/nickhamm/.local/bin/poetry" nocompletions
@@ -84,11 +84,10 @@ zinit load esc/conda-zsh-completion
 ## Install Google Cloud SDK
 # zinit snippet
 
-# zinit cdclear 
 
 autoload -Uz compinit
 compinit
-zinit cdreplay
+zinit cdreplay -q
 
 # source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 # zinit wait"1" lucid from"gh-r" as"null" for \
