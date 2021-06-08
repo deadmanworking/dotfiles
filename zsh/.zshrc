@@ -88,7 +88,7 @@ zinit load esc/conda-zsh-completion
 autoload -Uz compinit
 compinit
 zinit cdreplay -q
-
+kitty + complete setup zsh | source /dev/stdin
 # source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 # zinit wait"1" lucid from"gh-r" as"null" for \
 #      sbin"**/fd"        @sharkdp/fd \
