@@ -29,3 +29,15 @@ include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/solarized-dark-256.the
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/solarized-light-256.theme
 #include /opt/homebrew/Cellar/task/2.5.3/share/doc/task/rc/no-color.theme
 
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+--uda.priorities.values=H,M,L,
+uda.ongoing.type=string
+uda.size.label=Ongoing
+uda.ongoing.values=true,false
+uda.ongoing.default=false
+urgency.uda.ongoing.true.coefficient=-10.0
