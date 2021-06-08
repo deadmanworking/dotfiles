@@ -5,18 +5,36 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
+# General Settings
 typeset -U path
 setopt autocd
 # Enable vi mode
 bindkey -v
 
+## History Settings
+# file settings
+export HISTFILE=$XDG_DATA_HOME/.zsh_history
+export HISTSIZE=1000000000
+export HISTFILESIZE=1000000000
+# share history accross multiple sessions & immediate append
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+# add timestap + elapsed time
+setopt EXTENDED_HISTORY
+# no duplicates saved
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_ALL_DUPS
+
+## Completions & Corrections
 # case insensitive path-completion 
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
 # partial completion suggestions
 zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix 
+# enable corrections for commands & options (NOT WORKING)
+# ENABLE_CORRECTION="true"
+# setopt correct_all
 
-## Zinit Instll & Source
+## Zinit Insatll & Source
 autoload -Uz installZinit asdfSetup
 installZinit
 source "$XDG_DATA_HOME/zinit/bin/zinit.zsh"
@@ -84,6 +102,7 @@ zinit load esc/conda-zsh-completion
 ## Install Google Cloud SDK
 # zinit snippet
 
+zinit light zsh-users/zsh-autosuggestions
 
 autoload -Uz compinit
 compinit
