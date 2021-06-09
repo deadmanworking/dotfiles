@@ -145,14 +145,22 @@ Plug 'tmux-plugins/vim-tmux-focus-events'   " ensures autoload works in tmux
 Plug 'tmhedberg/simpylfold', { 'for': 'python' }     " no-BS Python code folding for vim
 Plug 'psf/black', { 'for': 'python', 'tag': '*' }    " uncompromising code formatter
 Plug 'junegunn/limelight.vim'       " Hyperfocus-writing in Vim"
+" Plug 'Shougo/deoplete.nvim'
 "" Plug in Settings
 "
-                        
+" deoplete
+" let g:deoplete#enable_at_startup = 1
+" ALE 
 nmap <silent> <leader>aj :ALENext<cr>
+let g:ale_completion_enabled = 1
 " Vim-Polyglot
 let g:python_highlight_all=1
 ""
 call plug#end()
+
+" call deoplete#custom#option('sources', {
+"                         \ '_':['ale',],
+"                         \})
 "}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
