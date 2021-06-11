@@ -8,6 +8,7 @@
 #   variable=      -- By specifying no value, this means no default
 #   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
 
+
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
@@ -41,3 +42,6 @@ uda.size.label=Ongoing
 uda.ongoing.values=true,false
 uda.ongoing.default=false
 urgency.uda.ongoing.true.coefficient=-10.0
+
+# tasksh config
+tasksh.autoclear=1

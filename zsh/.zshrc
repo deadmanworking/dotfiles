@@ -104,6 +104,9 @@ zinit load esc/conda-zsh-completion
 
 zinit light zsh-users/zsh-autosuggestions
 
+# zinit ice as"completion" \
+zinit load svenXY/timewarrior
+
 autoload -Uz compinit
 compinit
 zinit cdreplay -q
