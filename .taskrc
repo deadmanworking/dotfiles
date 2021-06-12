@@ -36,12 +36,19 @@ report._reviewed.description=Tasksh review report.  Adjust the filter to your ne
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
---uda.priorities.values=H,M,L,
+uda.priorities.values=H,M,L,
 uda.ongoing.type=string
 uda.size.label=Ongoing
 uda.ongoing.values=true,false
 uda.ongoing.default=false
 urgency.uda.ongoing.true.coefficient=-10.0
 
+urgency.age.coefficient=0.0
+urgency.age.max=0.0
+urgency.blocked.coefficient=0.0
+
+verbose=blank,footnote,label,new-id,new-uuid,affected,edit,special,project,sync,unwait,recur
+
+default.command=next
 # tasksh config
 tasksh.autoclear=1
