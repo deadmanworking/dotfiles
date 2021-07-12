@@ -102,7 +102,12 @@ zinit load esc/conda-zsh-completion
 ## Install Google Cloud SDK
 # zinit snippet
 
+## Other things
 zinit light zsh-users/zsh-autosuggestions
+
+zinit ice as"program" from"gh-r" mv"bin/exa* -> exa"
+zinit load ogham/exa
+
 
 # zinit ice as"completion" \
 zinit load svenXY/timewarrior
