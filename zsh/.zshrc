@@ -81,6 +81,13 @@ zinit as"command" id-as"miniconda"  \
 for zdharma/null
 
 zinit load esc/conda-zsh-completion
+
+# Install mdloader for flashing keyboard
+# download mdloader_mac
+# download applet-mdflash.bin
+# chmod u+x mdloader_mac
+#
+
 ## Install Google Cloud SDK
 # zinit snippet
 
