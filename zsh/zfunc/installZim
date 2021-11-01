@@ -1,0 +1,9 @@
+# downloads and installs zim
+#
+ZIM_INSTALL=$XDG_DATA_HOME/.zim
+
+if [[ ! -f $ZIM_INSTALL/zimfw.zsh ]]; then
+        command mkdir -p "$ZIM_INSTALL" && command chmod g-rwX "$ZIM_INSTALL"
+        command curl -L -o $ZIM_INSTALL/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+        command /bin/zsh $ZIM_INSTALL/zimfw.zsh install  
+fi
