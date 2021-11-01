@@ -7,10 +7,10 @@ export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local"
 
-## Zinit
-typeset -A ZINIT
+## Zinit - DEPRECATED (https://www.reddit.com/r/zsh/comments/qinb6j/httpsgithubcomzdharma_has_suddenly_disappeared_i/)
+# typeset -A ZINIT
 # ZINIT_HOME=$XDG_CACHE_HOME/zsh/zsinit
-ZINIT[HOME_DIR]=$XDG_DATA_HOME/zinit
+# ZINIT[HOME_DIR]=$XDG_DATA_HOME/zinit
 
 ## Vim 
 export VIMDIRPATH="$XDG_CONFIG_HOME/vim"
