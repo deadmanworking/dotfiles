@@ -1,3 +1,4 @@
+## ZINIT IS DEPRECATED! (https://www.reddit.com/r/zsh/comments/qinb6j/httpsgithubcomzdharma_has_suddenly_disappeared_i/)
 # Installs zinit
 ZINIT_HOME=$XDG_DATA_HOME/zinit
 
