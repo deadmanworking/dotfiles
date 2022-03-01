@@ -21,8 +21,8 @@ autoload -Uz installZinit asdfSetup
 installZinit
 source "$XDG_DATA_HOME/zinit/bin/zinit.zsh"
 
-zinit light zinit-zsh/z-a-patch-dl
-zinit light zinit-zsh/z-a-bin-gem-node
+zinit light zdharma-continuum/z-a-patch-dl
+zinit light zdharma-continuum/z-a-bin-gem-node
 
 
 ## Install starship as prompt
