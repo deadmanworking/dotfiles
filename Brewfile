@@ -16,7 +16,7 @@ tap "rbenv/tap"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
+#z brew "bat"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Validating, recursive, caching DNS resolver
@@ -34,15 +34,15 @@ brew "diff-so-fancy"
 # IMAP/POP3 server
 brew "dovecot"
 # Command-line fuzzy finder written in Go
-brew "fzf"
+#z brew "fzf"
 # GitHub command-line tool
-brew "gh"
+#z brew "gh"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Lightweight and flexible command-line JSON processor
-brew "jq"
+#z brew "jq"
 # Provides library functionality for FIDO U2F & FIDO 2.0, including USB
 brew "libfido2"
 # Mac App Store command-line interface
@@ -86,9 +86,9 @@ cask "adium"
 # View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
 # GPU-accelerated terminal emulator
-cask "alacritty"
+#zcask "alacritty"
 # Distribution of the Python and R programming languages for scientific computing
-cask "anaconda"
+#zcask "anaconda"
 # Manage team projects and tasks
 cask "asana"
 # Data management tool that enables working with SQL Server
@@ -106,7 +106,7 @@ cask "dash"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerized applications and microservices
-cask "docker"
+#z cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Launcher for *Epic Games* games
@@ -118,9 +118,9 @@ cask "font-hack-nerd-font"
 # Web browser
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
+#z cask "iterm2"
 # JetBrains tools manager
-cask "jetbrains-toolbox"
+#z cask "jetbrains-toolbox"
 # Keyboard customizer
 cask "karabiner-elements"
 # Sound clear in online meetings
@@ -164,7 +164,7 @@ cask "transmit"
 # Open-source code editor
 cask "visual-studio-code"
 # Web browser focusing on customization and control
-cask "vivaldi"
+#z cask "vivaldi"
 # Application for configuring any YubiKey
 cask "yubico-yubikey-manager"
 # Application for configuring a PIV-enabled YubiKey
