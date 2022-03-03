@@ -26,19 +26,19 @@ brew "cask"
 # C library implementing the SSH2 protocol
 brew "libssh2"
 # Open source suite of directory software
-brew "openldap"
+# brew "openldap"
 # Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
+# brew "curl"
 # Good-lookin' diffs with diff-highlight and more
-brew "diff-so-fancy"
+# brew "diff-so-fancy"
 # IMAP/POP3 server
-brew "dovecot"
+# brew "dovecot"
 # Command-line fuzzy finder written in Go
 #z brew "fzf"
 # GitHub command-line tool
 #z brew "gh"
 # Distributed revision control system
-brew "git"
+# brew "git"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Lightweight and flexible command-line JSON processor
@@ -74,7 +74,7 @@ brew "microsoft/mssql-release/msodbcsql17"
 # Sqlcmd and Bcp for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/mssql-tools"
 # Remote terminal with IP roaming
-brew "mistertea/et/et"
+# brew "mistertea/et/et"
 # Quantum Mechanical Keyboard (QMK) Firmware
 brew "qmk/qmk/qmk"
 # Password manager that keeps all passwords secure behind one password
@@ -186,7 +186,7 @@ mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "MoneyWiz", id: 1511185140
+# mas "MoneyWiz", id: 1511185140
 mas "Night Sky X", id: 475772902
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
@@ -203,7 +203,7 @@ mas "Remote Desktop", id: 409907375
 mas "Rested", id: 421879749
 mas "Spark", id: 1176895641
 mas "Swackett", id: 412558550
-mas "Vimari", id: 1480933944
+# mas "Vimari", id: 1480933944
 mas "while True: learn()", id: 1410198714
 mas "Xcode", id: 497799835
 mas "Yubico Authenticator", id: 1497506650

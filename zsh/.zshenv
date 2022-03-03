@@ -10,8 +10,8 @@ export XDG_DATA_HOME="$HOME/.local"
 ## Zinit
 typeset -A ZINIT
 # ZINIT_HOME=$XDG_CACHE_HOME/zsh/zsinit
-ZINIT[HOME_DIR]=$XDG_DATA_HOME/zinit
-
+# ZINIT[HOME_DIR]=$XDG_DATA_HOME/zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 ## Vim 
 export VIMDIRPATH="$XDG_CONFIG_HOME/vim"
 export VIMINIT='let $MYVIMRC="$VIMDIRPATH/vimrc" | source $MYVIMRC'

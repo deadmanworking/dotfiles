@@ -1,11 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
 typeset -U path
 setopt autocd
 # Enable vi mode
@@ -19,23 +11,73 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suff
 ## Zinit Instll & Source
 autoload -Uz installZinit
 installZinit
-source "$XDG_DATA_HOME/zinit/bin/zinit.zsh"
+source "${ZINIT_HOME}/zinit.zsh"
 
-# zinit light zdharma-continuum/z-a-patch-dl
-# zinit light zdharma-continuum/z-a-bin-gem-node
+# Set variable for determining correct binary
+case "$OSTYPE" in
+  linux*) bpick='*((#s)|/)*(linux|musl)*((#e)|/)*' ;;
+  darwin*) bpick='*(macos|darwin)*' ;;
+  *) echo 'WARN: unsupported system -- some cli programs might not work' ;;
+esac
 
+## Zinit plugins
+# Per docs this should be first - not sure why
+zinit light-mode for zdharma-continuum/zinit-annex-bin-gem-node
 
-## Install starship as prompt
-# zinit ice as"command" from"gh-r" atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" atpull"%atclone" src"init.zsh" # pull behavior same as clone, source init.zsh
-# zinit light starship/starship
+## Theme/Prompt
+# Load powerlevel10k 
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
 
-## Install spaceship as prompt
+# Load pure 
+# zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+# zinit light sindresorhus/pure
+
+# Load starship
+# zi for \
+#     from'gh-r' \
+#     sbin'**/starship -> starship' \
+#   starship/starship
+
+## Load spaceship
 # zinit light denysdovhan/spaceship-prompt
 
-## Install Powerline10k as prompt
-# zinit ice depth=1
-# zinit light romkatv/powerlevel10k
+## Utilities 
+# Bat - better cat
+zi for \
+    from'gh-r' \
+    sbin'**/bat -> bat' \
+  @sharkdp/bat \
+
+# exa - better cd
+zi for \
+    from'gh-r' \
+    sbin'**/exa-> exa' \
+  ogham/exa
+
+# brew -- NOT CONFIRMED AS GOOD FOR ME TO USE WITH M1 
+# zi for \
+#     as'null' \
+#     atclone'%atpull' \
+#     atpull'
+#          ./bin/brew update --preinstall \
+#       && ln -sf $PWD/completions/zsh/_brew $ZINIT[COMPLETIONS_DIR] \
+#       && rm -f brew.zsh \
+#       && ./bin/brew shellenv --dummy-arg > brew.zsh \
+#       && zcompile brew.zsh' \
+#     depth'3' \
+#     nocompletions \
+#     sbin'bin/brew' \
+#     src'brew.zsh' \
+#   homebrew/brew
+
 # ## Install TmuX
+# zi for \
+#     alias'tmux=$ZPFX/tmux' \
+#     from'gh-r' \
+#     mv'tmux* -> tmux' \
+#     pick'tmux' \
+#   @tmux/tmux
 # zinit ice as"program" from"gh-r" ver"latest" mv"tmux* -> tmux" atclone"cd tmux; ./configure --prefix=$ZPFX;make && make install" pick"$ZPFX/bin/tmux"
 # zinit load tmux/tmux
 
@@ -95,3 +137,4 @@ compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
