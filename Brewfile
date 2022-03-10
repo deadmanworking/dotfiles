@@ -142,7 +142,7 @@ cask "nova"
 # Web browser
 cask "opera"
 # File system integration
-cask "osxfuse"
+cask "macfuse"
 # HTTP client that helps testing and describing APIs
 cask "paw"
 # Collaboration platform for API development

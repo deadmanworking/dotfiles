@@ -124,8 +124,8 @@ zi for \
 
 # zinit load esc/conda-zsh-completion
 ## Install Google Cloud SDK
-# zinit snippet
 
+## Completions
 
 autoload -Uz compinit
 compinit
@@ -138,3 +138,5 @@ compinit
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+export PATH="$HOME/.poetry/bin:$PATH"
