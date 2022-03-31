@@ -21,7 +21,7 @@ case "$OSTYPE" in
 esac
 
 ## Zinit plugins
-# Per docs this should be first - not sure why
+# Per docs this should be first - enables some extra functionality (like sbin ice)
 zinit light-mode for zdharma-continuum/zinit-annex-bin-gem-node
 
 ## Theme/Prompt
@@ -53,7 +53,12 @@ zi for \
 zi for \
     from'gh-r' \
     sbin'**/exa-> exa' \
-  ogham/exa
+  ogham/exa \
+    sbin'diff-so-fancy' \
+  so-fancy/diff-so-fancy
+  
+
+# diff-so-fancy -- fancy git diffs
 
 # brew -- NOT CONFIRMED AS GOOD FOR ME TO USE WITH M1 
 # zi for \
