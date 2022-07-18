@@ -1,8 +1,8 @@
 
 ## Homebrew
 # Initialize Homebrew
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# TODO: Don't need this for m1 macs
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Completions
 if type brew &>/dev/null
