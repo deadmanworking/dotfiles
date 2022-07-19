@@ -54,9 +54,12 @@ zi for \
     from'gh-r' \
     sbin'**/exa-> exa' \
   ogham/exa \
-    sbin'diff-so-fancy' \
-  so-fancy/diff-so-fancy
-  
+    # sbin'diff-so-fancy' \
+  # so-fancy/diff-so-fancy
+zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
+zinit load zdharma-continuum/zsh-diff-so-fancy
+
+
 
 # diff-so-fancy -- fancy git diffs
 

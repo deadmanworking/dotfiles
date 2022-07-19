@@ -1,4 +1,4 @@
-tap "harryzcy/ascheck"
+# tap "harryzcy/ascheck"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"

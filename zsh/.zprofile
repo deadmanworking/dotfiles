@@ -12,3 +12,4 @@ then
   autoload -Uz compinit
   compinit
 fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
